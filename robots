@@ -1,0 +1,12 @@
+txtUser-agent: *
+Disallow: /
+
+# すべての検索エンジンボットに対してサイト全体をクロール禁止
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot  
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
