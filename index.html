@@ -6,12 +6,12 @@
     <title>チャレンジタッチ保護者サイト</title>
     <!-- Google Analytics 4 (GA4) -->
     <!-- TODO: YOUR_GA4_MEASUREMENT_ID を実際のIDに置き換えてください -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y8WFS4DN0B"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_MEASUREMENT_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-Y8WFS4DN0B');
+        gtag('config', 'YOUR_GA4_MEASUREMENT_ID');
     </script>
     
     <style>
@@ -549,9 +549,11 @@
         document.addEventListener('mousemove', function() {
             clearTimeout(engagementTimer);
             engagementTimer = setTimeout(function() {
-                gtag('event', 'user_engagement', {
-                    custom_parameter_1: '5秒間アクティブ',
-                    custom_parameter_2: '保護者ダッシュボード'
+                // GTM DataLayer - エンゲージメント
+                window.dataLayer.push({
+                    'event': 'user_engagement',
+                    'engagement_duration': '5秒間アクティブ',
+                    'page_type': '保護者ダッシュボード'
                 });
             }, 5000);
         });
